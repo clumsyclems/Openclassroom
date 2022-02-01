@@ -12,18 +12,16 @@
     >
 </head>
 <body class="d-flex flex-column min-vh-100">
+    
     <div class="container">
-    <!-- Methode 1 pour transferer des  infos d'une page à une autre -->
-    <a href="bonjour.php?nom=Dupont&amp;prenom=Jean">Dis-moi bonjour !</a>
-    
-    <!-- Methode 2 pour transferer des infos d'une page à une autre -->
-    <form action="contact.php" method="GET">
-        <!-- données à faire passer à l'aide d'inputs -->
-        <input name="nom">
-        <input name="prenom">
-    </form>
-    
-    <?php include_once('header.php'); ?>
+        
+        <!-- Methode 1 pour transferer des  infos d'une page à une autre -->
+        <a href="submit_contact.php?email=Dupont.jean@gmail.com&amp;message=Jean aime bien ces plats">Dis-moi bonjour !</a>
+        
+        </form>
+        
+        <?php include_once('header.php'); ?>
+        
         <h1>Site de recettes</h1>
 
         <!-- inclusion des variables et fonctions -->
@@ -42,6 +40,17 @@
                 <i><?php echo displayAuthor($recipe['author'], $users); ?></i>
             </article>
         <?php endforeach ?>
+        <!-- Methode 2 pour transferer des infos d'une page à une autre -->
+        <form method="post" action="submit_contact.php"> 
+            <!-- method est la méthod que l'n va utiliser ici c'est l'envoie de donnée et action est l'endroit vers où les données vont être envoyer-->
+        
+            <p>
+            <input type="hidden" class="form-control" id="email" name="email" aria-describedby="email-help" value="jean.duppont@gmail.com">
+            <textarea for="message" class="form-control" placeholder="Exprimez vous" id="message" name="message"></textarea>
+            </p>
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+        </form>
+
     </div>
 
     <!-- inclusion du bas de page du site -->
