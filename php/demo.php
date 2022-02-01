@@ -42,7 +42,7 @@ print_r($eleve2) . PHP_EOL;
  */
 
     // if
-$value = 12;
+$value = readline("Entrer votre note :"); //fonction qui permet de rentrer des valeurs directment sur la page
 if ($value > 10){
     echo "Vous êtes au-dessus de la moyenne". PHP_EOL;
 }else{
