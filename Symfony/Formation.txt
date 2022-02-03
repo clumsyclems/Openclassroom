@@ -1,0 +1,17 @@
+Symfony fonctionne sur le modèle MVC :
+M -> Modèle (Admin) : source de données (database, fichier excel) ---> (Back)
+V -> Vue (Marketing) : présentation de l'application ---> (Front)
+C -> Controleur (CEO) : donne les directives  ---> (Link between Front and Back)
+
+Exemple : 
+    Get /login 
+    --> Controller du nom de "loginController" : loginController(Directive) est appelé 
+        --> demande à Vue d'afficher la page de connection
+        --> Vue affiche la page de connection 
+
+    Post /login
+    --> Controller du nom de "loginController" : loginController(Directive) est appelé 
+        --> Demande à Modèle s'il existe un utiliseur avec ce mot de passe
+            --> Modèle vérifie et renvoie sa réponse : ici on supose non
+        --> Controller reçoit la réponse et demande à vue d'afficher "mot de passe invalide"
+            --> Vue affiche mot de passe invalide

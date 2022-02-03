@@ -1,0 +1,47 @@
+*****Symphony comande **********
+    Pour créer un nouveau projet sans beaucoup de fonctionnalité on tape : 
+    "symfony new <nom_du_projet>"
+
+    Si on souhaite avoir toute les bibliotiques on tape alors : 
+    "symfony new <nom_du_projet> --full"
+
+    Pour créer un server avec symfony :
+    "symfony server:start"
+
+        Ajouter "-d" pour qu'il soit lancé en background.
+
+    List les server lancé par symfony :
+    "symfony server:list"
+
+    Pour la création d'un controler :
+    "symfony console make:controler <nom_associé au controler"
+
+    Voir la documentation de symfony pour toute les possibilité d'utilisations
+
+***** Organisation du projet ****************************
+        bin/console = commande que l'on peut faire avec l'input "php bin/console <command>" ou "<symfony console <command>"
+        
+        config : stock la configuration du projet 
+
+        public : Tout les fichiers qui seront public dans le projet : tout le monde peut y acceder depuis la internet
+        
+        src : là où on passera la grande partie du projet pour faire le clone de pinterest.
+
+        var : stocke les variables et log temporaire.
+
+        vendor : dossier où toute les dépendences du projet sont installer.
+        
+        .env : definition et gezstion des variable d'environnement.
+
+        .gitignore : peremt à git d'ignorer certain fichiers
+
+        composer.json : permet de vérifier la configuration du projet
+
+        composer.lock : permet de donner la configuration lock pour le projet
+
+        symfony.lock : permet avec "symfony flex" de gerer les applications symfony du projet
+
+******************************** Installation de package ********************************
+    utilisation de la commande "composer req <nom_du_package>" voir leur nom sur le site symfony flex
+    Pour desinstaller un package on utilise la commande "composer rem <nom_du_package>"
+
