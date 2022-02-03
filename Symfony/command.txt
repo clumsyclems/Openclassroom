@@ -1,4 +1,4 @@
-*****Symphony comande **********
+*****Symphony commande **********
     Pour créer un nouveau projet sans beaucoup de fonctionnalité on tape : 
     "symfony new <nom_du_projet>"
 
@@ -15,6 +15,35 @@
 
     Pour la création d'un controler :
     "symfony console make:controler <nom_associé au controler"
+
+    Pour la création d'une entité :
+    "symfony console make:entity" 
+    
+        Ensuite on donne le nom de notre entité puis on lui donne les autres arguments que va contenir notre entité.
+        pour avoir des information sur le type de donné due l'on peut avoir taper "?".
+
+        Par la suite le terminal demande de créer une migration afin de traduire en SQL l'entité créé.
+
+    Pour la création d'une base de donnée:
+    "symfony console doctrine:database:create"
+        pour sa suppression on va utiliser la commande : "symfony console doctrine:database:drop --force"
+        ici "--force" permet d'indiquer à la console que l'on veut réellement supprimer cette base de données
+
+    Maintenant que la base de données à été créé on peut effectuer la migration de la class en bdd avec la commande :
+    "symfony console make:migration" 
+
+    Les migrations permettront de pouvoir voyage entre les version et ainsi voir l'évolution des migration
+    Voici quelques commandes pour aider:
+
+        Voir les migrations disponible : "symfony console doctrine:migration:status"
+        Pour faire la dernière migrations : "symfony console doctrine:migration:migrate"
+        Pour avoir la migration precedence : "symfony console doctrine:migration:migrate prev"
+        Pour avoir la migration suivante : "symfony console doctrine:migration:migrate next"
+
+
+    Pour avoir une libraries de debug on peut utiliser le pack profiler de symfony flex avec la commande :
+    "composer req profiler --dev"
+
 
     Voir la documentation de symfony pour toute les possibilité d'utilisations
 
@@ -45,3 +74,19 @@
     utilisation de la commande "composer req <nom_du_package>" voir leur nom sur le site symfony flex
     Pour desinstaller un package on utilise la commande "composer rem <nom_du_package>"
 
+******************************** Variable d'environments ********************************
+    La création de variable d'environnement surt un terminal se fait via la commande :
+        "export <NOM_VAR_ENV_MAJ> = <Var_de_la_variable>"
+    
+    Pour l'afficher il faut taper "echo $<NOM_VAR_ENV_MAJ>"
+
+    En php il faut utiliser la commande " getenv('<NOM_VAR_ENV_MAJ>')".
+
+    Pour accéder à une variable d'environnement dans un ficher "*yaml" on utilise cette typo : " '%env(<NOM_VAR_ENV_MAJ>)%' "
+    Si une variable d'environnement se situe dans la variable que récupère la commande 'env(<NOM_VAR_ENV_MAJ>)' il faut alors la recherche.
+    Donc on va utiliser la commande 'env(resolve:<NOM_VAR_ENV_MAJ>)' il est possible d'avoir d'autre commande (recherche dans la documentation)
+
+
+******************************** Commande SQL *******************************
+    Pour supprimer toute les variable d'une table on utilise la commande : "Delete from <nom_de_la_table>;"
+        Mais les variables id qui s'auto incrément ne sont pas ré-initialisé donc il est préférable de taper "truncate <nom_de_la_table>;"
