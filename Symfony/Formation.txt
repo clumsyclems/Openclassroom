@@ -54,4 +54,6 @@ Les parametres configurations permettent de pouvoir modifier des variables situe
 Afin d'éviter des failles de sécurité toute les variables d'environnement sensible ou secretes doivent rester sur le poste de travail et donc 
 l'utilisation d'un fichier ".env.local" est necessaire. et ne sera pas commit. Elles le dessus sur les valeurs dans le fichier .env .
 
+Afin de mieux sécuriser et de facilité le voyage entre les pages du projet il est préférable d'utiliser les routes :
+
 

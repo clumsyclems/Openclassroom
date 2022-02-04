@@ -44,6 +44,18 @@
     Pour avoir une libraries de debug on peut utiliser le pack profiler de symfony flex avec la commande :
     "composer req profiler --dev"
 
+    Afin de facilité le voyage entre les pages du projet il faut utiliser des routes pour pouvoir afficher tout les routes actuelles on utilise la commande :
+    "symfony console debug:router"
+
+    Pour la création de formulaire avec symfony il faut installer le pack adéquat : 
+    "composer req form"
+
+    Afin d'éviter de toujours devoir aller dans la base de dnner il existe une commande symfony pour envoyer des commandes à la base de données du projet
+    "symfony console doctrine:query:sql "<la_commande_sql>"" 
+
+    Pour vérifier les routes une commande symfony existe : 
+    "symfony console router:match <chemin_router>"
+
 
     Voir la documentation de symfony pour toute les possibilité d'utilisations
 
