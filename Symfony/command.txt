@@ -3,7 +3,9 @@
     "symfony new <nom_du_projet>"
 
     Si on souhaite avoir toute les bibliotiques on tape alors : 
-    "symfony new <nom_du_projet> --full"
+    "symfony new <nom_du_projet> --full" deprecated
+    "symfony new <nom_du_projet> --webapp"
+
 
     Pour créer un server avec symfony :
     "symfony server:start"
@@ -50,11 +52,14 @@
     Pour la création de formulaire avec symfony il faut installer le pack adéquat : 
     "composer req form"
 
-    Afin d'éviter de toujours devoir aller dans la base de dnner il existe une commande symfony pour envoyer des commandes à la base de données du projet
+    Afin d'éviter de toujours devoir aller dans la base de donner il existe une commande symfony pour envoyer des commandes à la base de données du projet
     "symfony console doctrine:query:sql "<la_commande_sql>"" 
 
     Pour vérifier les routes une commande symfony existe : 
     "symfony console router:match <chemin_router>"
+
+    Dans le cas ou il faut vérifier la base de données du projet corresponds au entité produite et au futur table qui vont être créer. 
+    La commande suivante permet de savoir si les nouvelle entité sont en adéquation avec la bdd sinon donne les commande à effectuer pour les obtenirs comme il faut.
 
 
     Voir la documentation de symfony pour toute les possibilité d'utilisations
